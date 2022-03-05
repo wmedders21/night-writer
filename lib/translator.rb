@@ -36,7 +36,11 @@ class Translator
     make_binary(character).insert(4, register)
   end
 
-  def braille_strings(character)
+  def char_string(character)
     add_register(character).gsub("1", ".")
+  end
+
+  def formatted(character)
+    char_string(character).insert(2, "\n").insert(5, "\n")
   end
 end
