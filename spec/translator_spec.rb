@@ -9,7 +9,7 @@ SimpleCov.start
 RSpec.describe Translator do
   before :each do
     @braille = Dictionary.new
-    @translator = Translator.new("a", @braille)
+    @translator = Translator.new("apple", @braille)
   end
 
   it 'exists' do
@@ -17,7 +17,7 @@ RSpec.describe Translator do
   end
 
   it 'has attributes' do
-    expect(@translator.text).to eq("a")
+    expect(@translator.text).to eq("apple")
     expect(@translator.dictionary). to be_a(Dictionary)
   end
 
@@ -65,4 +65,9 @@ RSpec.describe Translator do
     expect(@translator.formatted("z")).to eq("0.\n.0\n00")
     expect(@translator.formatted("w")).to eq(".0\n00\n.0")
   end
+
+  it 'makes an arry of individual characters from incoming text' do
+    expect(@translator.chars).to eq(["a", "p", "p", "l", "e"])
+  end
+
 end
