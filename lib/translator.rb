@@ -40,10 +40,6 @@ class Translator
     add_register(character).gsub("1", ".")
   end
 
-  # def formatted(character)
-  #   char_string(character).insert(2, "\n").insert(5, "\n")
-  # end
-
   def chars
     @text.strip.split(//)
   end
@@ -59,6 +55,15 @@ class Translator
   def row_3
     chars.map { |char| char_string(char)[4..5] }.join
   end
+
+  def formatted
+    row_1.concat("\n", row_2, "\n", row_3, "\n")
+  end
+
+
+
+
+
   # def self.translate(text, dictionary)
   #   translator = Translator.new(text, dictionary)
   #   chars = text.strip.split(//)#.map do |char|
