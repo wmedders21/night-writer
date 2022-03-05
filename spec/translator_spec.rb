@@ -58,16 +58,21 @@ RSpec.describe Translator do
     expect(@translator.char_string("w")).to eq(".000.0")
   end
 
-  it 'formatted' do
-    expect(@translator.formatted("a")).to eq("0.\n..\n..")
-    expect(@translator.formatted("g")).to eq("00\n00\n..")
-    expect(@translator.formatted("r")).to eq("0.\n00\n0.")
-    expect(@translator.formatted("z")).to eq("0.\n.0\n00")
-    expect(@translator.formatted("w")).to eq(".0\n00\n.0")
-  end
+  # it 'formatted' do
+  #   expect(@translator.formatted("a")).to eq("0.\n..\n..")
+  #   expect(@translator.formatted("g")).to eq("00\n00\n..")
+  #   expect(@translator.formatted("r")).to eq("0.\n00\n0.")
+  #   expect(@translator.formatted("z")).to eq("0.\n.0\n00")
+  #   expect(@translator.formatted("w")).to eq(".0\n00\n.0")
+  # end
 
   it 'makes an arry of individual characters from incoming text' do
     expect(@translator.chars).to eq(["a", "p", "p", "l", "e"])
+    binding.pry
+  end
+
+  it 'row_1' do
+    expect(@translator.row_1.to eq("0.000.0..0")
   end
 
 end

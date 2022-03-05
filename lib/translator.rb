@@ -40,9 +40,9 @@ class Translator
     add_register(character).gsub("1", ".")
   end
 
-  def formatted(character)
-    char_string(character).insert(2, "\n").insert(5, "\n")
-  end
+  # def formatted(character)
+  #   char_string(character).insert(2, "\n").insert(5, "\n")
+  # end
 
   def chars
     @text.strip.split(//)
