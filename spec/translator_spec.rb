@@ -49,4 +49,12 @@ RSpec.describe Translator do
     expect(@translator.add_register("z")).to eq("011000")
     expect(@translator.add_register("w")).to eq("100010")
   end
+
+  it 'braille_strings' do
+    expect(@translator.braille_strings("a")).to eq("0.....")
+    expect(@translator.braille_strings("g")).to eq("0000..")
+    expect(@translator.braille_strings("r")).to eq("0.000.")
+    expect(@translator.braille_strings("z")).to eq("0..000")
+    expect(@translator.braille_strings("w")).to eq(".000.0")
+  end
 end
