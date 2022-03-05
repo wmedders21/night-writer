@@ -15,7 +15,8 @@ RSpec.describe Dictionary do
 
   it 'has attributes' do
     expect(@dictionary.register1).to eq(["g", "f", "d", "c", "h", "b", "e", "a", "j", "i"])
-    expect(@dictionary.register1).to eq(["q", "p", "n", "m", "r", "l", "o", "k", "t", "s"])
-    expect(@dictionary.register1).to eq([nil, nil, "y", "x", nil, "v", "z", "u", nil, nil])
-    expect(@dictionary.register1).to eq([nil, nil, nil, nil, nil, nil, nil, nil, "w", nil])
+    expect(@dictionary.register2).to eq(["q", "p", "n", "m", "r", "l", "o", "k", "t", "s"])
+    expect(@dictionary.register3).to eq([nil, nil, "y", "x", nil, "v", "z", "u", nil, nil])
+    expect(@dictionary.register4).to eq([nil, nil, nil, nil, nil, nil, nil, nil, "w", nil])
+  end
 end
