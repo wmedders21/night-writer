@@ -20,4 +20,8 @@ RSpec.describe Translator do
     expect(@translator.text).to eq("a")
     expect(@translator.dictionary). to be_a(Dictionary)
   end
+
+  it 'find character register' do
+    expect(@translator.find_register("a")).to eq(@braille.register1)
+  end
 end
