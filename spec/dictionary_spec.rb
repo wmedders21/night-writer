@@ -14,9 +14,12 @@ RSpec.describe Dictionary do
   end
 
   it 'has attributes' do
-    expect(@dictionary.register1).to eq(["g", "f", "d", "c", "h", "b", "e", "a", "j", "i"])
-    expect(@dictionary.register2).to eq(["q", "p", "n", "m", "r", "l", "o", "k", "t", "s"])
-    expect(@dictionary.register3).to eq([nil, nil, "y", "x", nil, "v", "z", "u", nil, nil])
-    expect(@dictionary.register4).to eq([nil, nil, nil, nil, nil, nil, nil, nil, "w", nil])
+    expect(@dictionary.character_hash).to be_a(Hash)
+    expect(@dictionary.character_hash).to eq({
+      :register1 => ["g", "f", "d", "c", "h", "b", "e", "a", "j", "i"],
+      :register2 => ["q", "p", "n", "m", "r", "l", "o", "k", "t", "s"],
+      :register3 => [nil, nil, "y", "x", nil, "v", "z", "u", nil, nil],
+      :register4 => [nil, nil, nil, nil, nil, nil, nil, nil, "w", nil]
+    })
   end
 end
