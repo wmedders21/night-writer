@@ -17,4 +17,8 @@ class Translator
       v if v.any?(character)
     end.compact.first.index(character)
   end
+
+  def make_binary(character)
+    "%04b" % find_character_index(character)
+  end
 end
