@@ -6,4 +6,4 @@ writer = File.open(ARGV[1], "w")
 writer.write(rendered_text)
 writer.close
 
-puts "Created '#{ARGV[1]}' containing #{rendered_text.bytesize} characters"
+puts "Created '#{ARGV[1]}' containing #{incoming_text.bytesize} characters"
