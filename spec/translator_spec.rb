@@ -50,12 +50,12 @@ RSpec.describe Translator do
     expect(@translator.add_register("w")).to eq("100010")
   end
 
-  it 'braille_strings' do
-    expect(@translator.braille_strings("a")).to eq("0.....")
-    expect(@translator.braille_strings("g")).to eq("0000..")
-    expect(@translator.braille_strings("r")).to eq("0.000.")
-    expect(@translator.braille_strings("z")).to eq("0..000")
-    expect(@translator.braille_strings("w")).to eq(".000.0")
+  it 'char_string' do
+    expect(@translator.char_string("a")).to eq("0.....")
+    expect(@translator.char_string("g")).to eq("0000..")
+    expect(@translator.char_string("r")).to eq("0.000.")
+    expect(@translator.char_string("z")).to eq("0..000")
+    expect(@translator.char_string("w")).to eq(".000.0")
   end
 
   it 'formatted' do
