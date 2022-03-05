@@ -25,6 +25,10 @@ RSpec.describe Translator do
     expect(@translator.find_register("a")).to eq(:register1)
     expect(@translator.find_register("m")).to eq(:register2)
     expect(@translator.find_register("v")).to eq(:register3)
-    expect(@translator.find_register("w")).to eq(:register4)    
+    expect(@translator.find_register("w")).to eq(:register4)
+  end
+
+  it 'find character index' do
+    expect(@translator.find_character_index("a")).to eq(7)
   end
 end
