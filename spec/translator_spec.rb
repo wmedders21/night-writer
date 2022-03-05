@@ -30,5 +30,8 @@ RSpec.describe Translator do
 
   it 'find character index' do
     expect(@translator.find_character_index("a")).to eq(7)
+    expect(@translator.find_character_index("k")).to eq(7)
+    expect(@translator.find_character_index("u")).to eq(7)
+    expect(@translator.find_character_index("g")).to eq(0)
   end
 end
