@@ -22,6 +22,9 @@ RSpec.describe Translator do
   end
 
   it 'find character register' do
-    expect(@translator.find_register("a")).to eq(@braille.character_hash[:register1])
+    expect(@translator.find_register("a")).to eq(:register1)
+    expect(@translator.find_register("m")).to eq(:register2)
+    expect(@translator.find_register("v")).to eq(:register3)
+    expect(@translator.find_register("w")).to eq(:register4)    
   end
 end
