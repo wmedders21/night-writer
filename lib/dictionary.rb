@@ -1,2 +1,3 @@
 class Dictionary
+
 end
