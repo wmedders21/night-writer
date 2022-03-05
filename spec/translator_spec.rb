@@ -40,5 +40,9 @@ RSpec.describe Translator do
     expect(@translator.make_binary("q")).to eq("0000")
     expect(@translator.make_binary("z")).to eq("0110")
     expect(@translator.make_binary("w")).to eq("1000")
-  end    
+  end
+
+  it 'add_register' do
+    expect(@translator.add_register("a")).to eq("011111")
+  end   
 end
