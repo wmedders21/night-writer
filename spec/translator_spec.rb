@@ -34,4 +34,11 @@ RSpec.describe Translator do
     expect(@translator.find_character_index("u")).to eq(7)
     expect(@translator.find_character_index("g")).to eq(0)
   end
+
+  it 'convert to 4 digit binary' do
+    expect(@translator.make_binary("a")).to eq("0111")
+    expect(@translator.make_binary("q")).to eq("0000")
+    expect(@translator.make_binary("z")).to eq("0110")
+    expect(@translator.make_binary("w")).to eq("1000")
+  end    
 end
