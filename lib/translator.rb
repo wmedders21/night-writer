@@ -60,4 +60,9 @@ class Translator
   def formatted
     row_1.concat("\n", row_2, "\n", row_3, "\n")
   end
+
+  def self.translate(text, dictionary)
+    translator = Translator.new(text, dictionary)
+    translator.formatted
+  end
 end
