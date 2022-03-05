@@ -44,5 +44,9 @@ RSpec.describe Translator do
 
   it 'add_register' do
     expect(@translator.add_register("a")).to eq("011111")
-  end   
+    expect(@translator.add_register("g")).to eq("000011")
+    expect(@translator.add_register("r")).to eq("010001")
+    expect(@translator.add_register("z")).to eq("011000")
+    expect(@translator.add_register("w")).to eq("100010")
+  end
 end

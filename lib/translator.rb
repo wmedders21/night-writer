@@ -21,4 +21,18 @@ class Translator
   def make_binary(character)
     "%04b" % find_character_index(character)
   end
+
+  def add_register(character)
+    register = find_register(character)
+    if register == :register1
+      register = "11"
+    elsif register == :register2
+      register = "01"
+    elsif register == :register3
+      register = "00"
+    elsif register == :register4
+      register = "10"
+    end
+    make_binary(character).insert(4, register)
+  end
 end
