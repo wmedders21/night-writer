@@ -48,6 +48,10 @@ class Translator
     @text.strip.split(//)
   end
 
+  def row_1
+    chars.map { |char| char_string(char)[0..1] }.join
+  end
+
   # def self.translate(text, dictionary)
   #   translator = Translator.new(text, dictionary)
   #   chars = text.strip.split(//)#.map do |char|

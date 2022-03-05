@@ -68,11 +68,10 @@ RSpec.describe Translator do
 
   it 'makes an arry of individual characters from incoming text' do
     expect(@translator.chars).to eq(["a", "p", "p", "l", "e"])
-    binding.pry
   end
 
   it 'row_1' do
-    expect(@translator.row_1.to eq("0.000.0..0")
+    expect(@translator.row_1).to eq("0.00000.0.")
   end
 
 end
