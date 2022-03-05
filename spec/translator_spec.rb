@@ -40,6 +40,8 @@ RSpec.describe Translator do
     expect(@translator.make_binary('q')).to eq('0000')
     expect(@translator.make_binary('z')).to eq('0110')
     expect(@translator.make_binary('w')).to eq('1000')
+    expect(@translator.make_binary(' ')).to eq('1111')
+
   end
 
   it 'add_register' do
@@ -48,6 +50,8 @@ RSpec.describe Translator do
     expect(@translator.add_register('r')).to eq('010001')
     expect(@translator.add_register('z')).to eq('011000')
     expect(@translator.add_register('w')).to eq('100010')
+    expect(@translator.add_register(' ')).to eq('111111')
+
   end
 
   it 'char_string' do
@@ -76,5 +80,9 @@ RSpec.describe Translator do
 
   it 'formatted' do
     expect(@translator.formatted).to eq("0.00000.0.\n..0.0.0..0\n..0.0.0...\n")
+  end
+
+  it 'translate' do
+    expect(Translator.translate("orange", @braille)).to eq("0.0.0.00000.\n.000...000.0\n0.0...0.....\n")
   end
 end
