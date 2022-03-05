@@ -57,4 +57,12 @@ RSpec.describe Translator do
     expect(@translator.braille_strings("z")).to eq("0..000")
     expect(@translator.braille_strings("w")).to eq(".000.0")
   end
+
+  it 'formatted' do
+    expect(@translator.formatted("a")).to eq("0.\n..\n..")
+    expect(@translator.formatted("g")).to eq("00\n00\n..")
+    expect(@translator.formatted("r")).to eq("0.\n00\n0.")
+    expect(@translator.formatted("z")).to eq("0.\n.0\n00")
+    expect(@translator.formatted("w")).to eq(".0\n00\n.0")
+  end
 end
