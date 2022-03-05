@@ -1,1 +1,1 @@
-Hi. This is a test of the emergency broadcasting system. Do not adjust your set. 
+["00\n00\n.."]

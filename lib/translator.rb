@@ -43,4 +43,16 @@ class Translator
   def formatted(character)
     char_string(character).insert(2, "\n").insert(5, "\n")
   end
+
+  def chars
+    @text.strip.split(//)
+  end
+
+  # def self.translate(text, dictionary)
+  #   translator = Translator.new(text, dictionary)
+  #   chars = text.strip.split(//)#.map do |char|
+  #     binding.pry
+  #     translator.formatted(char).first
+  #   # end
+  # end
 end
