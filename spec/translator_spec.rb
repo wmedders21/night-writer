@@ -15,4 +15,9 @@ RSpec.describe Translator do
   it 'exists' do
     expect(@translator).to be_a(Translator)
   end
+
+  it 'has attributes' do
+    expect(@translator.text).to eq("a")
+    expect(@translator.dictionary). to be_a(Dictionary)
+  end
 end
