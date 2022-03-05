@@ -82,5 +82,7 @@ RSpec.describe Translator do
     expect(@translator.row_3).to eq("..0.0.0...")
   end
 
-
+  it 'formatted' do
+    expect(@translator.formatted).to eq("0.00000.0.\n..0.0.0..0\n..0.0.0...\n")
+  end
 end
