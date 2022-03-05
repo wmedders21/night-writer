@@ -52,6 +52,13 @@ class Translator
     chars.map { |char| char_string(char)[0..1] }.join
   end
 
+  def row_2
+    chars.map { |char| char_string(char)[2..3] }.join
+  end
+
+  def row_3
+    chars.map { |char| char_string(char)[4..5] }.join
+  end
   # def self.translate(text, dictionary)
   #   translator = Translator.new(text, dictionary)
   #   chars = text.strip.split(//)#.map do |char|

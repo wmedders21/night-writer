@@ -74,10 +74,11 @@ RSpec.describe Translator do
     expect(@translator.row_1).to eq("0.00000.0.")
   end
 
-  it row_2 do
+  it 'row_2' do
     expect(@translator.row_2).to eq("..0.0.0..0")
   end
-  xit row_3 do
+
+  it 'row_3' do
     expect(@translator.row_3).to eq("..0.0.0...")
   end
 
