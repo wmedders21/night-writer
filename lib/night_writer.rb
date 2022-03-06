@@ -1,13 +1,12 @@
 require 'pry'
 require './lib/translator'
 require './lib/dictionary'
+require './lib/readable'
+require './lib/writeable'
 
-opener = File.open(ARGV[0], 'r')
-incoming_text = opener.read.downcase
-puts "Created '#{ARGV[1]}' containing #{incoming_text.length} characters"
-opener.close
+include Readable
+include Writeable
+
 braille = Dictionary.new
-rendered_text = Translator.translate(incoming_text, braille)
-writer = File.open(ARGV[1], 'w')
-writer.write(rendered_text)
-writer.close
+rendered_text = Translator.translate(read, braille)
+write(rendered_text)
