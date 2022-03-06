@@ -10,4 +10,9 @@ RSpec.describe Latin do
     latin = Latin.new
     expect(latin).to be_a(Latin)
   end
+
+  it 'has attributes' do
+    latin = Latin.new
+    expect(latin.character_hash).to be_a(Hash)
+  end
 end
