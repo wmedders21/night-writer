@@ -14,7 +14,7 @@ class Translator
   end
 
   def find_character_index(character)
-    @dictionary.character_hash.map do |_k, v|
+    @dictionary.character_hash.map do |k, v|
       v if v.any?(character)
     end.compact.first.index(character)
   end
@@ -42,7 +42,7 @@ class Translator
   end
 
   def chars
-    @text.strip.split(//)
+    @text.downcase.delete("\n").split(//).take(40)
   end
 
   def row_1
