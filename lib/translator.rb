@@ -1,6 +1,7 @@
 require 'pry'
 class Translator
-  attr_reader :text, :dictionary
+  attr_reader :dictionary
+  attr_accessor :text
 
   def initialize(text, dictionary)
     @text = text
@@ -42,7 +43,12 @@ class Translator
   end
 
   def chars
-    @text.downcase.delete("\n").split(//).take(40)
+    if @text.length > 40
+      take = @text.downcase.delete("\n").split(//).take(40)
+      here = @text.slice!(0..39).split(//)
+    else
+      take = @text.downcase.delete("\n").split(//).take(40)
+    end
   end
 
   def row_1
@@ -57,12 +63,20 @@ class Translator
     chars.map { |char| char_string(char)[4..5] }.join
   end
 
+  # def formatted
+  #   row_1.concat("\n", row_2, "\n", row_3, "\n")
+  # end
+
   def formatted
-    row_1.concat("\n", row_2, "\n", row_3, "\n")
+  f = [row_1, "\n", row_2, "\n", row_3, "\n"]
   end
 
   def self.translate(text, dictionary)
     translator = Translator.new(text, dictionary)
-    translator.formatted
+    rows = []
+    until text.length < 40
+      rows << translator.formatted
+    end
+    rows << translator.formatted
   end
 end
