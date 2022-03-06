@@ -8,12 +8,11 @@ SimpleCov.start
 
 RSpec.describe ToLatin do
   before :each do
-    file = File.open('texttxt.txt', 'r')
-    test_text = file.read
+    file = File.open('testtxt.txt', 'r')
+    @test_text = file.read
     file.close
     @latin = Latin.new
-    @to_latin = ToLatin.new(test_text, @latin)
-    binding.pry
+    @to_latin = ToLatin.new(@test_text, @latin)
   end
 
   it 'exists' do
