@@ -45,7 +45,6 @@ class Translator
   def chars
     if @text.length > 40
       take = @text.downcase.delete("\n").split(//).take(40)
-      here = @text.slice!(0..39).split(//)
     else
       take = @text.downcase.delete("\n").split(//).take(40)
     end
@@ -76,6 +75,7 @@ class Translator
     rows = []
     until text.length < 40
       rows << translator.formatted
+      text.slice!(0..39).split(//)      
     end
     rows << translator.formatted
   end
