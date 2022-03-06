@@ -77,13 +77,13 @@ RSpec.describe Translator do
   end
 
   it 'formatted' do
-    expect(@translator.formatted).to eq(["0.00000.0.", "\n", "..0.0.0..0", "\n", "..0.0.0...", "\n"])
+    expect(@translator.formatted).to eq(['0.00000.0.', "\n", '..0.0.0..0', "\n", '..0.0.0...', "\n"])
   end
 
   it 'translate' do
-    expect(Translator.translate("orange",
-                                @braille)).to eq([["0.0.0.00000.", "\n", ".000...000.0", "\n", "0.0...0.....", "\n"]])
-    expect(Translator.translate("qwertyuiopasdfghjklzxcvbnmqwertyuiopasklzxcvbnmewoinfnrjoefonweofnweonfewo",
+    expect(Translator.translate('orange',
+                                @braille)).to eq("0.0.0.00000.\n.000...000.0\n0.0...0.....\n")
+    expect(Translator.translate('qwertyuiopasdfghjklzxcvbnmqwertyuiopasklzxcvbnmewoinfnrjoefonweofnweonfewo',
                                 @braille).length).to eq(2)
   end
 

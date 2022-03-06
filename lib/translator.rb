@@ -43,11 +43,7 @@ class Translator
   end
 
   def chars
-    if @text.length > 40
-      take = @text.downcase.delete("\n").split(//).take(40)
-    else
-      take = @text.downcase.delete("\n").split(//).take(40)
-    end
+    @text.delete("\n").split(//).take(40)
   end
 
   def row_1
@@ -62,12 +58,8 @@ class Translator
     chars.map { |char| char_string(char)[4..5] }.join
   end
 
-  # def formatted
-  #   row_1.concat("\n", row_2, "\n", row_3, "\n")
-  # end
-
   def formatted
-  f = [row_1, "\n", row_2, "\n", row_3, "\n"]
+    [row_1, "\n", row_2, "\n", row_3, "\n"]
   end
 
   def self.translate(text, dictionary)
@@ -75,8 +67,9 @@ class Translator
     rows = []
     until text.length < 40
       rows << translator.formatted
-      text.slice!(0..39).split(//)      
+      text.slice!(0..39).split(//)
     end
     rows << translator.formatted
+    rows.join
   end
 end
