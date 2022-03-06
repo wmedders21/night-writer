@@ -85,4 +85,11 @@ RSpec.describe Translator do
   it 'translate' do
     expect(Translator.translate("orange", @braille)).to eq("0.0.0.00000.\n.000...000.0\n0.0...0.....\n")
   end
+
+  it 'can only print 80 characters in a row' do
+    long_text = Translator.new(
+                                'qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghj
+                                klzxcvbnmewoinfnrjoefonweofnweonfewo', @braille)
+    expect(long_text.chars.count).to be < 81
+  end
 end
