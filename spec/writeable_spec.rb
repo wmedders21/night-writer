@@ -7,10 +7,10 @@ include Writeable
 RSpec.describe Writeable do
   it 'write' do
     ARGV.replace(['??????', 'spec.txt'])
-    write("apple")
+    write('apple')
     file = File.open('spec.txt', 'r')
     test_text = file.read
     file.close
-    expect(test_text).to eq("apple")
+    expect(test_text).to eq('apple')
   end
 end
