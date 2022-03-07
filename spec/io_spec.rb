@@ -18,4 +18,8 @@ RSpec.describe IO do
     expect(@io.get_text).to be_a(String)
     expect(@io.get_text.length).to be(308)
   end
+
+  it 'print_statement' do
+    expect(@io.print_statement).to eq("Created 'braille.txt' containing 308 characters")
+  end
 end
