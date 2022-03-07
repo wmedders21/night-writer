@@ -1,19 +1,19 @@
 require 'pry'
 require 'rspec'
 require 'simplecov'
-require './lib/translator'
+require './lib/to_braille'
 require './lib/braille_dictionary'
 
 SimpleCov.start
 
-RSpec.describe Translator do
+RSpec.describe ToBraille do
   before :each do
     @braille = BrailleDictionary.new
-    @translator = Translator.new('apple', @braille)
+    @translator = ToBraille.new('apple', @braille)
   end
 
   it 'exists' do
-    expect(@translator).to be_a(Translator)
+    expect(@translator).to be_a(ToBraille)
   end
 
   it 'has attributes' do
@@ -81,14 +81,14 @@ RSpec.describe Translator do
   end
 
   it 'translate' do
-    expect(Translator.translate('orange',
+    expect(ToBraille.translate('orange',
                                 @braille)).to eq("0.0.0.00000.\n.000...000.0\n0.0...0.....\n")
-    expect(Translator.translate('qwertyuiopasdfghjklzxcvbnmqwertyuiopasklzxcvbnmewoinfnrjoefonweofnweonfewo',
+    expect(ToBraille.translate('qwertyuiopasdfghjklzxcvbnmqwertyuiopasklzxcvbnmewoinfnrjoefonweofnweonfewo',
                                 @braille).class).to eq(String)
   end
 
   it 'can only print 80 characters in a row' do
-    long_text = Translator.new(
+    long_text = ToBraille.new(
       'qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghj
                                 klzxcvbnmewoinfnrjoefonweofnweonfewo', @braille
     )

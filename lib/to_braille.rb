@@ -1,5 +1,5 @@
 require 'pry'
-class Translator
+class ToBraille
   attr_reader :dictionary
   attr_accessor :text
 
@@ -63,7 +63,7 @@ class Translator
   end
 
   def self.translate(text, dictionary)
-    translator = Translator.new(text, dictionary)
+    translator = ToBraille.new(text, dictionary)
     rows = []
     until text.length < 40
       rows << translator.formatted
