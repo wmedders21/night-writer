@@ -24,4 +24,8 @@ class ToLatin
     end
     array
   end
+
+  def convert_letters
+    parse_rows.map { |letter| @dictionary.character_hash[letter] }
+  end
 end

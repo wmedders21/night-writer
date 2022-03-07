@@ -35,7 +35,7 @@ RSpec.describe ToLatin do
     expect(@to_latin.parse_rows).to eq(["0.00..", "0..0..", "0.0.0.", "0.0.0.", "0..00.", "......", ".000.0", "0..00.", "0.000.", "0.0.0.", "00.0.."])
   end
 
-  it 'convert_letter' do
-    expect(@to_latin.convert_letter).to eq(["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"])
+  it 'convert_letters' do
+    expect(@to_latin.convert_letters).to eq(["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"])
   end
 end
