@@ -31,7 +31,9 @@ RSpec.describe IO do
   context 'writing' do
 
     it 'make_new_file()' do
-      make_new_file('apple')
+      io = IO.new(ARGV)
+      ARGV.replace(['??????', 'spec.txt'])
+      io.make_new_file('apple')
       file = File.open('spec.txt', 'r')
       test_text = file.read
       file.close

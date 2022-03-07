@@ -15,4 +15,10 @@ class IO
   def make_statement
     "Created '#{@arg_array[1]}' containing #{@text.length} characters"
   end
+
+  def make_new_file(input)
+    writer = File.open(@arg_array[1], 'w')
+    writer.write(input)
+    writer.close
+  end
 end
