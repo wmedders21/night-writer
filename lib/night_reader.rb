@@ -1,13 +1,11 @@
 require 'pry'
 require './lib/to_latin'
-require './lib/latin'
-require './lib/readable'
-require './lib/writeable'
+require './lib/latin_dictionary'
+require './lib/io'
 
-include Readable
-include Writeable
-
-latin = Latin.new
-translated = ToLatin.new(read, latin)
+latin = LatinDictionary.new
+io = IO.new(ARGV)
+translated = ToLatin.new(io.get_text, latin)
 rendered_text = translated.formatted
-write(rendered_text)
+puts io.make_statement
+io.make_new_file(rendered_text)

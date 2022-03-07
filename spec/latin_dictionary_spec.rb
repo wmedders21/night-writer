@@ -1,18 +1,18 @@
 require 'pry'
 require 'rspec'
 require 'simplecov'
-require './lib/latin'
+require './lib/latin_dictionary'
 
 SimpleCov.start
 
-RSpec.describe Latin do
+RSpec.describe LatinDictionary do
   it 'exists' do
-    latin = Latin.new
-    expect(latin).to be_a(Latin)
+    latin = LatinDictionary.new
+    expect(latin).to be_a(LatinDictionary)
   end
 
   it 'has attributes' do
-    latin = Latin.new
+    latin = LatinDictionary.new
     expect(latin.character_hash).to be_a(Hash)
     expect(latin.character_hash).to eq({
                                          '0.....' => 'a',

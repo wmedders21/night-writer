@@ -1,16 +1,16 @@
 require 'pry'
 require 'rspec'
 require 'simplecov'
-require './lib/dictionary'
+require './lib/braille_dictionary'
 
 SimpleCov.start
 
-RSpec.describe Dictionary do
+RSpec.describe BrailleDictionary do
   before :each do
-    @dictionary = Dictionary.new
+    @dictionary = BrailleDictionary.new
   end
   it 'exists' do
-    expect(@dictionary).to be_a(Dictionary)
+    expect(@dictionary).to be_a(BrailleDictionary)
   end
 
   it 'has attributes' do

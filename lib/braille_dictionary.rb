@@ -1,4 +1,4 @@
-class Dictionary
+class BrailleDictionary
   attr_reader :character_hash
 
   def initialize
