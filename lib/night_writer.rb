@@ -1,9 +1,9 @@
 require 'pry'
 require './lib/translator'
-require './lib/dictionary'
+require './lib/braille_dictionary'
 require './lib/io'
 
-braille = Dictionary.new
+braille = BrailleDictionary.new
 io = IO.new(ARGV)
 rendered_text = Translator.translate(io.get_text, braille)
 puts io.make_statement

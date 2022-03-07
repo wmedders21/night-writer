@@ -2,13 +2,13 @@ require 'pry'
 require 'rspec'
 require 'simplecov'
 require './lib/translator'
-require './lib/dictionary'
+require './lib/braille_dictionary'
 
 SimpleCov.start
 
 RSpec.describe Translator do
   before :each do
-    @braille = Dictionary.new
+    @braille = BrailleDictionary.new
     @translator = Translator.new('apple', @braille)
   end
 
@@ -18,7 +18,7 @@ RSpec.describe Translator do
 
   it 'has attributes' do
     expect(@translator.text).to eq('apple')
-    expect(@translator.dictionary).to be_a(Dictionary)
+    expect(@translator.dictionary).to be_a(BrailleDictionary)
   end
 
   it 'find character register' do
