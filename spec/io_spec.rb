@@ -6,16 +6,16 @@ SimpleCov.start
 
 RSpec.describe IO do
   before :each do
-    ARGV.replace(['sample1.txt', 'braille.txt'])
     @io = IO.new(ARGV)
+    ARGV.replace(['sample1.txt', 'braille.txt'])
   end
 
   it 'exists' do
     expect(@io).to be_a(IO)
   end
 
-  xit 'read' do
-    expect(@io.read).to be_a(String)
-    expect(@io.read.length).to be(308)
+  it 'get_text' do
+    expect(@io.get_text).to be_a(String)
+    expect(@io.get_text.length).to be(308)
   end
 end
