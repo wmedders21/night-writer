@@ -7,6 +7,7 @@ require './lib/writeable'
 include Readable
 include Writeable
 
-# braille = Dictionary.new
-rendered_text = 'yay'
+latin = Latin.new
+translated = ToLatin.new(read, latin)
+rendered_text = translated.formatted
 write(rendered_text)
