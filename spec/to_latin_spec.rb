@@ -28,5 +28,10 @@ RSpec.describe ToLatin do
   it 'collect_rows' do
     expect(@to_latin.collect_rows).to be_a(Array)
     expect(@to_latin.collect_rows.count).to be(3)
+    expect(@to_latin.collect_rows.include?("\n")).to eq(false)
+  end
+
+  it 'parse rows' do
+    expect(@to_latin.parse_rows).to eq(["0.00..", "0..0..", "0.0.0.", "0.0.0.", "0..00.", "......", ".000.0", "0..00.", "0.000.", "0.0.0.", "00.0.."])
   end
 end
