@@ -1,6 +1,6 @@
 require 'pry'
-require './lib/translator'
-require './lib/dictionary'
+require './lib/to_latin'
+require './lib/latin'
 require './lib/readable'
 require './lib/writeable'
 
