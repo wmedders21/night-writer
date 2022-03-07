@@ -16,7 +16,7 @@ RSpec.describe IO do
     end
 
     it 'get_text' do
-      expect(@io.text).to eq("")
+      expect(@io.text).to eq('')
       @io.get_text
       expect(@io.text).to be_a(String)
       expect(@io.text.length).to be(308)
@@ -29,7 +29,6 @@ RSpec.describe IO do
   end
 
   context 'writing' do
-
     it 'make_new_file()' do
       io = IO.new(ARGV)
       ARGV.replace(['??????', 'spec.txt'])

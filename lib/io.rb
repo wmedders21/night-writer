@@ -1,8 +1,9 @@
 class IO
   attr_reader :text
+
   def initialize(arg_array)
     @arg_array = arg_array
-    @text = ""
+    @text = ''
   end
 
   def get_text

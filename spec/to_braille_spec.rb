@@ -82,9 +82,9 @@ RSpec.describe ToBraille do
 
   it 'translate' do
     expect(ToBraille.translate('orange',
-                                @braille)).to eq("0.0.0.00000.\n.000...000.0\n0.0...0.....\n")
+                               @braille)).to eq("0.0.0.00000.\n.000...000.0\n0.0...0.....\n")
     expect(ToBraille.translate('qwertyuiopasdfghjklzxcvbnmqwertyuiopasklzxcvbnmewoinfnrjoefonweofnweonfewo',
-                                @braille).class).to eq(String)
+                               @braille).class).to eq(String)
   end
 
   it 'can only print 80 characters in a row' do
