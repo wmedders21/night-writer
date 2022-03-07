@@ -1,13 +1,5 @@
-require 'pry'
-class ToBraille
-  attr_reader :dictionary
-  attr_accessor :text
-
-  def initialize(text, dictionary)
-    @text = text
-    @dictionary = dictionary
-  end
-
+require './lib/translator'
+class ToBraille < Translator
   def find_register(character)
     @dictionary.character_hash.map do |k, v|
       k if v.any?(character)
