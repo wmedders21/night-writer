@@ -15,11 +15,14 @@ RSpec.describe IO do
   end
 
   it 'get_text' do
-    expect(@io.get_text).to be_a(String)
-    expect(@io.get_text.length).to be(308)
+    expect(@io.text).to eq("")
+    @io.get_text
+    expect(@io.text).to be_a(String)
+    expect(@io.text.length).to be(308)
   end
 
-  it 'print_statement' do
-    expect(@io.print_statement).to eq("Created 'braille.txt' containing 308 characters")
+  it 'make_statement' do
+    @io.get_text
+    expect(@io.make_statement).to eq("Created 'braille.txt' containing 308 characters")
   end
 end

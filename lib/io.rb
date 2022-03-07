@@ -1,15 +1,18 @@
 class IO
+  attr_reader :text
   def initialize(arg_array)
     @arg_array = arg_array
+    @text = ""
   end
 
   def get_text
     opener = File.open(@arg_array[0], 'r')
     incoming_text = opener.read.downcase
     opener.close
-    incoming_text
+    @text = incoming_text
+  end
+
+  def make_statement
+    "Created '#{@arg_array[1]}' containing #{@text.length} characters"
   end
 end
-
-
-# puts "Created '#{ARGV[1]}' containing #{incoming_text.length} characters"
