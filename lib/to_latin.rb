@@ -28,4 +28,8 @@ class ToLatin
   def convert_letters
     parse_rows.map { |letter| @dictionary.character_hash[letter] }
   end
+
+  def formatted
+    convert_letters.join
+  end
 end
