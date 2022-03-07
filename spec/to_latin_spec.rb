@@ -38,4 +38,8 @@ RSpec.describe ToLatin do
   it 'convert_letters' do
     expect(@to_latin.convert_letters).to eq(["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"])
   end
+
+  it 'formatted' do
+    expect(@to_latin.formatted).to eq("hello world")
+  end
 end
