@@ -1,4 +1,4 @@
-class Latin
+class LatinDictionary
   attr_reader :character_hash
 
   def initialize

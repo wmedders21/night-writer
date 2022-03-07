@@ -2,7 +2,7 @@ require 'pry'
 require 'rspec'
 require 'simplecov'
 require './lib/to_latin'
-require './lib/latin'
+require './lib/latin_dictionary'
 
 SimpleCov.start
 
@@ -11,7 +11,7 @@ RSpec.describe ToLatin do
     file = File.open('testtxt.txt', 'r')
     @test_text = file.read
     file.close
-    @latin = Latin.new
+    @latin = LatinDictionary.new
     @to_latin = ToLatin.new(@test_text, @latin)
   end
 
