@@ -20,7 +20,7 @@ class ToLatin
       (rows[0].length / 2).times do
         array << rows.map { |row| row.slice!(0..1) }.join
       end
-      all_rows.delete("")
+      all_rows.delete('')
     end
     array
   end
